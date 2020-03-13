@@ -1,4 +1,4 @@
-![Forecast copy extension logo](/images/ghForecast.png)
+![Forecast copy extension logo](/images/ghForecast_small.png)
 
 # Copy Forecast project and task id
 
