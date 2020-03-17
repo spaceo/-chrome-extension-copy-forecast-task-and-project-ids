@@ -30,5 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
         copyToClipboard(prefix);
 
         status.innerHTML = `Forecast task id: <span class="what-was-copied">"${prefix}"</span> has been copied to your clipboard`;
+        status.innerHTML += `<div>Link to task: <a href="https://app.forecast.it/project/${projectId}/workflow/${taskId}">https://app.forecast.it/project/${projectId}/workflow/${taskId}</a></div>`;
     });
 }, false);
