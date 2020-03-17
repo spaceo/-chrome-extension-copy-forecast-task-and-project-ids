@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const projectId = projectAndTaskIdMatch[1].replace('-', '');
         const taskId = projectAndTaskIdMatch[2];
-        const prefix = `${projectId}-${taskId}`;
+        const prefix = `${taskId}`;
 
         copyToClipboard(prefix);
 
-        status.innerHTML = `Forecast project and task id: <span class="what-was-copied">"${prefix}"</span> has been copied to your clipboard`;
+        status.innerHTML = `Forecast task id: <span class="what-was-copied">"${prefix}"</span> has been copied to your clipboard`;
     });
 }, false);
