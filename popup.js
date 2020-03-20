@@ -23,13 +23,16 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const projectId = projectAndTaskIdMatch[1].replace('-', '');
-        const taskId = projectAndTaskIdMatch[2];
-        const prefix = `${taskId}`;
+        chrome.tabs.sendMessage(tabs[0].id, {data: ''}, function(response) {
+            const taskId = projectAndTaskIdMatch[2];
+            const description = response.data.replace(/ /g, "-").toLowerCase();
+            const prefix = `${taskId}-${description}`;
 
-        copyToClipboard(prefix);
+            copyToClipboard(prefix);
 
-        status.innerHTML = `Forecast task id: <span class="what-was-copied">"${prefix}"</span> has been copied to your clipboard`;
-        status.innerHTML += `<div>Link to task: <a href="https://app.forecast.it/project/${projectId}/workflow/${taskId}">https://app.forecast.it/project/${projectId}/workflow/${taskId}</a></div>`;
+            status.innerHTML = `Forecast task id: <span class="what-was-copied">"${prefix}"</span> has been copied to your clipboard`;
+        });
+
     });
 }, false);
+
