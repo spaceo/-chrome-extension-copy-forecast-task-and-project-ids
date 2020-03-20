@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const status = document.getElementById('status');
     chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
         const tabUrl = tabs[0].url;
-        const projectAndTaskIdMatch = tabUrl.match(/project\/(P-[0-9]+)\/workflow\/(T[0-9]+)/);
+        const projectAndTaskIdMatch = tabUrl.match(/project\/(P-[0-9]+)\/[^\/]+\/(T[0-9]+)/);
 
         if (
             !projectAndTaskIdMatch
