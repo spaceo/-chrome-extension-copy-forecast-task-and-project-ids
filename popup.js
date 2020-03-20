@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             copyToClipboard(prefix);
 
-            status.innerHTML = `Forecast task id: <span class="what-was-copied">"${prefix}"</span> has been copied to your clipboard`;
+            status.innerHTML = `Forecast task id and description: <span class="what-was-copied">"${prefix}"</span> has been copied to your clipboard`;
         });
 
     });

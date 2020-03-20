@@ -1,5 +1,7 @@
 chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
-    var inputField = document.getElementById('task-modal-task-name');
-    sendResponse({data: inputField.value, success: true});
+    const inputField = document.getElementById('task-modal-task-name');
+    if (inputField) {
+        sendResponse({data: inputField.value, success: true});
+    }
 });
 
