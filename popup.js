@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
         const tabUrl = tabs[0].url;
         const projectAndTaskIdMatch = tabUrl.match(/my-list\/(T[0-9]+)|project\/(P-[0-9]+)\/[^\/]+\/(T[0-9]+)/);
-        console.log(projectAndTaskIdMatch)
+
         if (
           projectAndTaskIdMatch
           && projectAndTaskIdMatch[1] !== undefined
